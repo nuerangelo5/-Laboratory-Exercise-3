@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 760" width="980" height="760" font-family="Public Sans, system-ui, -apple-system, sans-serif">
+  <rect width="980" height="760" fill="#FFFFFF" />
+  <rect x="20" y="20" width="940" height="720" rx="8" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1.5" />
+
+  <!-- Title -->
+  <text x="490" y="56" text-anchor="middle" font-size="18" font-weight="700" fill="#0F172A">Use Case Diagram — Equipment Borrowing &amp; Return Monitoring System</text>
+  <text x="490" y="76" text-anchor="middle" font-size="12" fill="#475569">Laboratory Exercise 3 • BSIT Section B • Systems Analysis and Design</text>
+
+  <!-- System Boundary -->
+  <rect x="260" y="100" width="510" height="610" rx="6" fill="#FFFFFF" stroke="#1E3A8A" stroke-width="2" />
+  <text x="515" y="126" text-anchor="middle" font-size="14" font-weight="700" fill="#1E3A8A">Online Equipment Borrowing &amp; Return Monitoring System</text>
+
+  <!-- Primary Actor: System User / Equipment Custodian -->
+  <g stroke="#0F172A" stroke-width="2" fill="none">
+    <circle cx="120" cy="340" r="18" />
+    <line x1="120" y1="358" x2="120" y2="418" />
+    <line x1="92" y1="378" x2="148" y2="378" />
+    <line x1="120" y1="418" x2="96" y2="458" />
+    <line x1="120" y1="418" x2="144" y2="458" />
+  </g>
+  <text x="120" y="482" text-anchor="middle" font-size="13" font-weight="700" fill="#0F172A">Equipment Custodian</text>
+  <text x="120" y="498" text-anchor="middle" font-size="11" fill="#475569">(Primary System User)</text>
+
+  <!-- Secondary Actor: Borrower -->
+  <g stroke="#475569" stroke-width="2" fill="none">
+    <circle cx="865" cy="400" r="18" />
+    <line x1="865" y1="418" x2="865" y2="478" />
+    <line x1="837" y1="438" x2="893" y2="438" />
+    <line x1="865" y1="478" x2="841" y2="518" />
+    <line x1="865" y1="478" x2="889" y2="518" />
+  </g>
+  <text x="865" y="542" text-anchor="middle" font-size="13" font-weight="700" fill="#334155">Borrower</text>
+  <text x="865" y="558" text-anchor="middle" font-size="11" fill="#64748B">(Student / Faculty / Staff)</text>
+  <text x="865" y="572" text-anchor="middle" font-size="10" fill="#64748B">Requests &amp; returns items</text>
+
+  <!-- Association Lines: Custodian -> Use Cases -->
+  <g stroke="#64748B" stroke-width="1.3">
+    <line x1="150" y1="365" x2="310" y2="165" />
+    <line x1="150" y1="368" x2="310" y2="215" />
+    <line x1="150" y1="372" x2="310" y2="265" />
+    <line x1="150" y1="376" x2="310" y2="315" />
+    <line x1="150" y1="380" x2="310" y2="365" />
+    <line x1="150" y1="384" x2="310" y2="415" />
+    <line x1="150" y1="388" x2="310" y2="465" />
+    <line x1="150" y1="392" x2="310" y2="515" />
+    <line x1="150" y1="396" x2="310" y2="565" />
+    <line x1="150" y1="400" x2="310" y2="615" />
+    <line x1="150" y1="404" x2="310" y2="665" />
+  </g>
+
+  <!-- Secondary Actor Associations -->
+  <g stroke="#94A3B8" stroke-width="1.3" stroke-dasharray="5,4">
+    <line x1="835" y1="442" x2="670" y2="465" />
+    <line x1="835" y1="450" x2="670" y2="515" />
+  </g>
+
+  <!-- Left Column Use Cases (inside boundary) -->
+  <g fill="#EFF6FF" stroke="#1D4ED8" stroke-width="1.5">
+    <ellipse cx="400" cy="165" rx="90" ry="20" />
+    <ellipse cx="400" cy="215" rx="90" ry="20" />
+    <ellipse cx="400" cy="265" rx="90" ry="20" />
+    <ellipse cx="400" cy="315" rx="90" ry="20" />
+    <ellipse cx="400" cy="365" rx="90" ry="20" />
+    <ellipse cx="400" cy="415" rx="90" ry="20" />
+    <ellipse cx="400" cy="465" rx="90" ry="20" />
+    <ellipse cx="400" cy="515" rx="90" ry="20" />
+    <ellipse cx="400" cy="565" rx="90" ry="20" />
+    <ellipse cx="400" cy="615" rx="90" ry="20" />
+    <ellipse cx="400" cy="665" rx="90" ry="20" />
+  </g>
+
+  <!-- Right Column Extended/Included Use Cases -->
+  <g fill="#F8FAFC" stroke="#0F172A" stroke-width="1.5">
+    <ellipse cx="645" cy="290" rx="96" ry="20" />
+    <ellipse cx="645" cy="365" rx="96" ry="20" />
+    <ellipse cx="645" cy="465" rx="96" ry="20" />
+    <ellipse cx="645" cy="515" rx="96" ry="20" />
+    <ellipse cx="645" cy="590" rx="96" ry="20" />
+  </g>
+
+  <!-- Dashed include/extend connectors -->
+  <g stroke="#475569" stroke-width="1.2" stroke-dasharray="4,3">
+    <line x1="490" y1="315" x2="549" y2="290" />
+    <line x1="490" y1="315" x2="549" y2="365" />
+    <line x1="490" y1="465" x2="549" y2="465" />
+    <line x1="490" y1="515" x2="549" y2="515" />
+    <line x1="490" y1="565" x2="549" y2="590" />
+  </g>
+
+  <!-- Use Case Labels -->
+  <g font-size="12" font-weight="600" fill="#0F172A" text-anchor="middle">
+    <text x="400" y="169">Login</text>
+    <text x="400" y="219">View Dashboard</text>
+    <text x="400" y="269">Add Equipment</text>
+    <text x="400" y="319">View Equipment</text>
+    <text x="400" y="369">Edit Equipment</text>
+    <text x="400" y="419">Delete Equipment</text>
+    <text x="400" y="469">Record Borrowing</text>
+    <text x="400" y="519">Return Equipment</text>
+    <text x="400" y="569">View Transactions</text>
+    <text x="400" y="619">Filter Transactions</text>
+    <text x="400" y="669">Logout</text>
+
+    <text x="645" y="294">Search Equipment</text>
+    <text x="645" y="369">View Borrowing History</text>
+    <text x="645" y="469">Validate Availability</text>
+    <text x="645" y="519">Detect Overdue Status</text>
+    <text x="645" y="594">Search Transactions</text>
+  </g>
+
+  <!-- Stereotype annotations -->
+  <g font-size="9.5" fill="#475569" text-anchor="middle">
+    <text x="520" y="294">&laquo;extend&raquo;</text>
+    <text x="520" y="352">&laquo;extend&raquo;</text>
+    <text x="520" y="458">&laquo;include&raquo;</text>
+    <text x="520" y="508">&laquo;include&raquo;</text>
+    <text x="520" y="574">&laquo;extend&raquo;</text>
+  </g>
+</svg>

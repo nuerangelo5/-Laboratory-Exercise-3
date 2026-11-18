@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" width="960" height="560" font-family="Public Sans, system-ui, -apple-system, sans-serif">
+  <rect width="960" height="560" fill="#FFFFFF" />
+  <rect x="20" y="20" width="920" height="520" rx="8" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1.5" />
+
+  <!-- Header -->
+  <text x="480" y="56" text-anchor="middle" font-size="18" font-weight="700" fill="#0F172A">Entity-Relationship Diagram (ERD) — Supabase PostgreSQL Schema</text>
+  <text x="480" y="76" text-anchor="middle" font-size="12" fill="#475569">One-to-Many (1:M): One equipment item may appear in many borrowing transactions over time</text>
+
+  <!-- ENTITY 1: equipment -->
+  <g transform="translate(65, 125)">
+    <rect width="290" height="260" rx="6" fill="#FFFFFF" stroke="#1E3A8A" stroke-width="2" />
+    <rect width="290" height="40" rx="5" fill="#1E3A8A" />
+    <text x="145" y="25" text-anchor="middle" font-size="14" font-weight="700" fill="#FFFFFF" font-family="JetBrains Mono, monospace">public.equipment</text>
+
+    <!-- Columns -->
+    <g font-size="12.5" font-family="JetBrains Mono, monospace">
+      <text x="16" y="68" fill="#1D4ED8" font-weight="700">PK</text>
+      <text x="52" y="68" fill="#0F172A" font-weight="600">id</text>
+      <text x="274" y="68" text-anchor="end" fill="#64748B">bigint</text>
+      <line x1="12" y1="78" x2="278" y2="78" stroke="#E2E8F0" />
+
+      <text x="52" y="102" fill="#0F172A">equipment_name</text>
+      <text x="274" y="102" text-anchor="end" fill="#64748B">text NN</text>
+
+      <text x="52" y="128" fill="#0F172A">category</text>
+      <text x="274" y="128" text-anchor="end" fill="#64748B">text NN</text>
+
+      <text x="16" y="154" fill="#0F766E" font-weight="700">UQ</text>
+      <text x="52" y="154" fill="#0F172A">asset_code</text>
+      <text x="274" y="154" text-anchor="end" fill="#64748B">text NN</text>
+
+      <text x="52" y="180" fill="#0F172A">condition</text>
+      <text x="274" y="180" text-anchor="end" fill="#64748B">text</text>
+
+      <text x="52" y="206" fill="#0F172A">availability</text>
+      <text x="274" y="206" text-anchor="end" fill="#64748B">text</text>
+
+      <text x="52" y="232" fill="#0F172A">created_at</text>
+      <text x="274" y="232" text-anchor="end" fill="#64748B">timestamptz</text>
+    </g>
+  </g>
+
+  <!-- RELATIONSHIP 1:M Crow's Foot Connector -->
+  <g stroke="#1E3A8A" stroke-width="2" fill="none">
+    <line x1="355" y1="215" x2="535" y2="215" />
+    <!-- One (||) on equipment side -->
+    <line x1="370" y1="203" x2="370" y2="227" />
+    <line x1="378" y1="203" x2="378" y2="227" />
+    <!-- Many (crow's foot) on borrow_transactions side -->
+    <line x1="518" y1="215" x2="535" y2="203" />
+    <line x1="518" y1="215" x2="535" y2="227" />
+    <circle cx="510" cy="215" r="5" fill="#F8FAFC" />
+  </g>
+  <text x="445" y="198" text-anchor="middle" font-size="12" font-weight="700" fill="#1E3A8A">1 : M</text>
+  <text x="445" y="238" text-anchor="middle" font-size="11" fill="#475569">is borrowed in</text>
+
+  <!-- ENTITY 2: borrow_transactions -->
+  <g transform="translate(535, 110)">
+    <rect width="340" height="334" rx="6" fill="#FFFFFF" stroke="#1E3A8A" stroke-width="2" />
+    <rect width="340" height="40" rx="5" fill="#1E3A8A" />
+    <text x="170" y="25" text-anchor="middle" font-size="14" font-weight="700" fill="#FFFFFF" font-family="JetBrains Mono, monospace">public.borrow_transactions</text>
+
+    <g font-size="12.5" font-family="JetBrains Mono, monospace">
+      <text x="16" y="68" fill="#1D4ED8" font-weight="700">PK</text>
+      <text x="52" y="68" fill="#0F172A" font-weight="600">id</text>
+      <text x="324" y="68" text-anchor="end" fill="#64748B">bigint</text>
+      <line x1="12" y1="78" x2="328" y2="78" stroke="#E2E8F0" />
+
+      <text x="16" y="102" fill="#B45309" font-weight="700">FK</text>
+      <text x="52" y="102" fill="#0F172A" font-weight="600">equipment_id</text>
+      <text x="324" y="102" text-anchor="end" fill="#64748B">bigint NN</text>
+
+      <text x="52" y="128" fill="#0F172A">borrower_name</text>
+      <text x="324" y="128" text-anchor="end" fill="#64748B">text NN</text>
+
+      <text x="52" y="154" fill="#0F172A">borrower_type</text>
+      <text x="324" y="154" text-anchor="end" fill="#64748B">text NN</text>
+
+      <text x="52" y="180" fill="#0F172A">department</text>
+      <text x="324" y="180" text-anchor="end" fill="#64748B">text NN</text>
+
+      <text x="52" y="206" fill="#0F172A">date_borrowed</text>
+      <text x="324" y="206" text-anchor="end" fill="#64748B">date NN</text>
+
+      <text x="52" y="232" fill="#0F172A">due_date</text>
+      <text x="324" y="232" text-anchor="end" fill="#64748B">date NN</text>
+
+      <text x="52" y="258" fill="#0F172A">date_returned</text>
+      <text x="324" y="258" text-anchor="end" fill="#64748B">date NULL</text>
+
+      <text x="52" y="284" fill="#0F172A">status</text>
+      <text x="324" y="284" text-anchor="end" fill="#64748B">text NN</text>
+
+      <text x="16" y="310" fill="#B45309" font-weight="700">FK</text>
+      <text x="52" y="310" fill="#0F172A">user_id</text>
+      <text x="324" y="310" text-anchor="end" fill="#64748B">uuid</text>
+    </g>
+  </g>
+
+  <!-- ENTITY 3: auth.users (Supabase Auth) -->
+  <g transform="translate(65, 420)">
+    <rect width="290" height="84" rx="6" fill="#FFFFFF" stroke="#475569" stroke-width="1.5" stroke-dasharray="5,3" />
+    <rect width="290" height="32" rx="5" fill="#334155" />
+    <text x="145" y="21" text-anchor="middle" font-size="13" font-weight="700" fill="#FFFFFF" font-family="JetBrains Mono, monospace">auth.users (Supabase)</text>
+    <text x="16" y="56" font-size="12" font-family="JetBrains Mono, monospace" fill="#1D4ED8" font-weight="700">PK</text>
+    <text x="52" y="56" font-size="12" font-family="JetBrains Mono, monospace" fill="#0F172A">id (uuid)</text>
+    <text x="52" y="74" font-size="11.5" font-family="JetBrains Mono, monospace" fill="#475569">email, encrypted_password</text>
+  </g>
+
+  <!-- Connector auth.users -> borrow_transactions.user_id -->
+  <g stroke="#475569" stroke-width="1.5" stroke-dasharray="4,3" fill="none">
+    <path d="M 355 462 L 455 462 L 455 418 L 535 418" />
+  </g>
+  <text x="455" y="482" text-anchor="middle" font-size="11" fill="#475569">records (1:M)</text>
+
+  <!-- Cardinality Footer Note -->
+  <text x="535" y="480" font-size="12" font-weight="600" fill="#0F172A">Cardinality Note:</text>
+  <text x="535" y="498" font-size="11.5" fill="#475569">Each equipment record can be borrowed multiple times across history,</text>
+  <text x="535" y="514" font-size="11.5" fill="#475569">while every borrow_transaction references exactly one equipment_id.</text>
+</svg>

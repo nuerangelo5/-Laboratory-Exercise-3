@@ -1,0 +1,6 @@
+{
+  "name": "CampusGear — Equipment Borrowing & Return Monitoring System",
+  "description": "Online college laboratory equipment borrowing, return tracking, and overdue monitoring system powered by Supabase PostgreSQL and Authentication.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
